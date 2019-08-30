@@ -1,0 +1,52 @@
+
+#title {
+  color: red;
+}
+
+.texto{
+
+    color: blue;
+    .background-color:grey;
+}
+
+
+#calc{
+  height: 247px;
+  position: relative;
+  width: 188px;
+  margin: 0px auto 0px auto;
+
+/*background-color: red;*/
+}
+
+#calc-top,#calc-middle,#calc-bottom {
+position: relative;
+width: 188px;
+}
+
+#calc-top{
+height: 10px;
+background: url(./img/calc-top.png) no-repeat top center;
+}
+
+#calc-middle{
+height: 230px;
+background: url(./img/calc-middle.png) repeat-y top center;
+}
+#calc-bottom{
+height: 10px;
+background: url(./img/calc-bottom.png) no-repeat top center;
+}
+#display{
+  position: relative;
+  width: 141px;
+  height: 40px;
+  padding: 5;
+  margin: 0 auto;
+  background: url(./img/calc-display.png) no-repeat top center;
+}
+#buttons{
+  position: relative;
+  width: 152px;
+  height: 0 auto;
+}
