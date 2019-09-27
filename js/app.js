@@ -51,27 +51,26 @@ window.onload = function()
     let secondValue;
     const  calcFunction = function(event)
     {
+        const option = {
+            baseURL: "http://127.0.0.1:3000/",
+            timeout: 5000,
+            method:"GET",
+            headers:{
+                "Content-Type": "application/json",
+            } 
+        }
         secondValue = parseFloat(display.innerText);
-        display.innerText = "";
-        switch (selectedOperator)
-        {
-            case "+":
-                resultValue = firstValue + secondValue;
-            break;
-            case "-":
-                resultValue = firstValue - secondValue;
-            break;
-            case "/":
-                resultValue = firstValue / secondValue;
-            break;
-            case "*":
-                resultValue = firstValue * secondValue;
-            break;
-            default:
-                display.innerText = "Error";
-            break;
-            }
-            display.innerText = resultValue;
+         
+        fetch(`http://127.0.0.1:3000/getresult/${firstValue}/${secondValue}/${selectedOperator}`,option)
+        .then(res => res.json())
+        .then ((response) => {
+            console.log (response)
+            display.innerText = response.result;
+        })
+        
+        
+        
+            //display.innerText = resultValue;
     }
 
     const btnEqual = document.getElementById("btnEqual");
